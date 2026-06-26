@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Button Component</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0B0E14;
+            font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .input-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-wrapper label {
+            margin-bottom: 6px;
+            font-size: 13px;
+            color: #8F9CAE;
+            font-weight: 500;
+        }
+
+        .input-wrapper input {
+            height: 50px;
+            min-height: 50px;
+            padding: 10px 14px;
+            font-size: 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(22, 28, 45, 0.5);
+            color: #FFFFFF;
+            font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+        }
+
+        .input-wrapper input::placeholder {
+            color: #5A6B7D;
+        }
+
+        .input-wrapper input:focus {
+            outline: none;
+            border-color: #2962FF;
+            box-shadow: 0 0 0 3px rgba(41, 98, 255, 0.1);
+        }
+
+        .button-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: auto;
+        }
+
+        .button-wrapper label {
+            margin-bottom: 6px;
+            font-size: 13px;
+            color: transparent;
+            height: 0;
+            display: none;
+        }
+
+        .predict-btn {
+            height: 50px;
+            min-height: 50px;
+            max-height: 50px;
+            padding: 10px 24px;
+            font-size: 16px;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #2962FF 0%, #1E40AF 100%);
+            color: #fcfafa;
+            box-shadow: 0 4px 15px rgba(41, 98, 255, 0.25);
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            width: 100%;
+        }
+
+        .predict-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(41, 98, 255, 0.4);
+        }
+
+        .predict-btn:active {
+            transform: translateY(0px);
+        }
+
+        .predict-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <div class="input-wrapper">
+            <label for="stock-ticker">Enter NSE/BSE Stock Ticker Symbol:</label>
+            <input 
+                type="text" 
+                id="stock-ticker" 
+                placeholder="e.g., TCS.NS, INFY.NS"
+                value="TCS.NS"
+            >
+        </div>
+        <div class="button-wrapper">
+            <button class="predict-btn" onclick="handlePredict()">Predict</button>
+        </div>
+    </div>
+
+    <script>
+        function handlePredict() {
+            const ticker = document.getElementById('stock-ticker').value.trim();
+            if (ticker) {
+                console.log('Predicting for ticker:', ticker);
+                alert(`Predicting stock forecast for: ${ticker}`);
+            } else {
+                alert('Please enter a valid stock ticker');
+            }
+        }
+
+        // Allow Enter key to trigger prediction
+        document.getElementById('stock-ticker').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                handlePredict();
+            }
+        });
+    </script>
+</body>
+</html>

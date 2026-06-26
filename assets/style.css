@@ -1,0 +1,316 @@
+/* EasyInvest AI - Premium Styling Customization */
+/* Inspired by Groww, Zerodha, and TradingView */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg-primary: #0B0E14;
+    --bg-card: rgba(22, 28, 45, 0.65);
+    --bg-card-hover: rgba(30, 38, 60, 0.85);
+    --accent-blue: #00E676; /* vibrant green for primary indicators */
+    --brand-color: #2962FF; /* Zerodha blue */
+    --success-green: #00C853;
+    --error-red: #FF3D00;
+    --text-primary: #FFFFFF;
+    --text-secondary: #8F9CAE;
+    --border-color: rgba(36, 45, 69, 0.4);
+    --border-hover: rgba(41, 98, 255, 0.6);
+}
+
+/* Global Font and Base Styling Override */
+html, body, [class*="css"] {
+    font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important;
+    background-color: var(--bg-primary);
+}
+
+/* Custom Glassmorphism Stock Card Layout */
+.stock-card {
+    background: linear-gradient(135deg, rgba(22, 28, 45, 0.7) 0%, rgba(15, 20, 32, 0.9) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.stock-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--border-hover);
+    box-shadow: 0 12px 30px rgba(41, 98, 255, 0.18);
+    background: var(--bg-card-hover);
+}
+
+.stock-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 14px;
+    margin-bottom: 16px;
+}
+
+.stock-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.3px;
+}
+
+.stock-symbol {
+    font-size: 13px;
+    color: #2962FF;
+    background: rgba(41, 98, 255, 0.12);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(41, 98, 255, 0.25);
+}
+
+.stock-price-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.price-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.price-value {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.shares-badge {
+    background: rgba(0, 200, 83, 0.12);
+    color: var(--success-green);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 13px;
+    border: 1px solid rgba(0, 200, 83, 0.25);
+}
+
+/* Glassmorphism Metric Container for Dashboard */
+.glass-metric {
+    background: rgba(22, 28, 45, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.25s ease;
+}
+
+.glass-metric:hover {
+    border-color: rgba(41, 98, 255, 0.4);
+    background: rgba(30, 38, 60, 0.6);
+}
+
+/* Custom recommendation badges */
+.badge-buy {
+    background: rgba(0, 200, 83, 0.15) !important;
+    color: var(--success-green) !important;
+    border: 1px solid rgba(0, 200, 83, 0.3) !important;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.badge-sell {
+    background: rgba(255, 61, 0, 0.15) !important;
+    color: var(--error-red) !important;
+    border: 1px solid rgba(255, 61, 0, 0.3) !important;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.badge-hold {
+    background: rgba(255, 152, 0, 0.15) !important;
+    color: #FF9800 !important;
+    border: 1px solid rgba(255, 152, 0, 0.3) !important;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* Chat bubble styling for Learning Assistant */
+.chat-bubble {
+    padding: 16px 20px;
+    border-radius: 16px;
+    margin-bottom: 12px;
+    max-width: 80%;
+    line-height: 1.5;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.chat-bubble-user {
+    background: linear-gradient(135deg, #2962FF 0%, #1565C0 100%);
+    color: #FFFFFF;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-bubble-ai {
+    background: rgba(22, 28, 45, 0.8);
+    color: #FFFFFF;
+    margin-right: auto;
+    border-bottom-left-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+/* Interactive Sidebar active items */
+div[data-testid="stSidebar"] {
+    background-color: #080A0F !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+/* Navigation Buttons */
+.stButton > button {
+    width: 100% !important;
+    height: 60px !important;
+    background: linear-gradient(135deg, #2962FF 0%, #1E40AF 100%) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 14px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    padding: 12px 20px !important;
+    box-shadow: 0 4px 15px rgba(41, 98, 255, 0.25) !important;
+    transition: all 0.3s ease !important;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(41, 98, 255, 0.4) !important;
+}
+
+/* Input field alignment */
+.stNumberInput, .stSelectSlider, .stSelectbox {
+    margin-bottom: 0 !important;
+}
+
+.stTextInput {
+    margin-bottom: 0 !important;
+}
+
+/* Text Input styling for button alignment */
+.stTextInput input, .stNumberInput input {
+    height: 50px !important;
+    min-height: 46px !important;
+    padding: 10px 14px !important;
+    font-size: 14px !important;
+    border-radius: 8px !important;
+}
+
+/* Input label styling */
+.stTextInput label, .stNumberInput label {
+    margin-bottom: 6px !important;
+    display: block !important;
+    font-size: 13px !important;
+}
+
+/* Column alignment for button containers */
+[data-testid="column"] {
+    padding: 0 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-end !important;
+    align-items: stretch !important;
+}
+
+/* Button wrapper container alignment */
+.stButton {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Hover Effect */
+.stButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(41, 98, 255, 0.4) !important;
+}
+
+/* Click Effect */
+.stButton > button:active {
+    transform: translateY(0px) !important;
+}
+
+/* Primary Button Enhancements - Aligned with Input Fields */
+.stButton>button {
+    background: linear-gradient(135deg, #2962FF 0%, #1E40AF 100%) !important;
+    color: #fcfafa !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 10px 24px !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    max-height: 50px !important;
+    width: 100% !important;
+    margin: 0 !important;
+    box-shadow: 0 4px 15px rgba(41, 98, 255, 0.25) !important;
+    transition: all 0.25s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+}
+
+.stButton>button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(41, 98, 255, 0.4) !important;
+}
+
+.stButton>button:active {
+    transform: translateY(0px) !important;
+}
+
+/* Streamlit Emotion Cache Container - Column Gap Spacing */
+.st-emotion-cache-wfksaw {
+    display: flex !important;
+    gap: rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    min-width: 1rem !important;
+    flex-flow: column !important;
+}
+
+/* Uniform input heights for professional alignment */
+.stNumberInput input,
+.stSelectSlider,
+.stSelectbox {
+    height: 50px !important;
+    min-height: 50px !important;
+    margin-bottom: 0 !important;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+    background: #1F263C;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--brand-color);
+}
